@@ -32,9 +32,9 @@ function onFormSubmit(event) {
 
 // ===== Save form
 function onFormInput(event) {
-  dataStorage[event.target.name] = event.target.value;
+  data[event.target.name] = event.target.value;
 
-  localStorage.setItem('feedback-form-state', JSON.stringify(dataStorage));
+  localStorage.setItem('feedback-form-state', JSON.stringify(data));
 }
 
 // ===== Load form
