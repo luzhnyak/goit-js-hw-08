@@ -5,7 +5,7 @@ const form = document.querySelector('.feedback-form');
 form.addEventListener('submit', onFormSubmit);
 form.addEventListener('input', throttle(onFormInput, 500));
 
-const data = {};
+let data = {};
 
 loadForm();
 
@@ -21,7 +21,7 @@ function onFormSubmit(event) {
     return alert('Please fill in all the fields!');
   }
 
-  const data = { email: email.value, message: message.value };
+  data = { email: email.value, message: message.value };
 
   console.log(data);
 
@@ -32,9 +32,9 @@ function onFormSubmit(event) {
 
 // ===== Save form
 function onFormInput(event) {
-  data[event.target.name] = event.target.value;
+  dataStorage[event.target.name] = event.target.value;
 
-  localStorage.setItem('feedback-form-state', JSON.stringify(data));
+  localStorage.setItem('feedback-form-state', JSON.stringify(dataStorage));
 }
 
 // ===== Load form
