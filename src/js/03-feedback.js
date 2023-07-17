@@ -43,15 +43,8 @@ function loadForm() {
 
   if (!dataSave) return;
 
-  const data = JSON.parse(dataSave);
+  data = JSON.parse(dataSave);
 
-  if (data.email) {
-    form.elements.email.value = data.email;
-    data['email'] = data.email;
-  }
-
-  if (data.message) {
-    form.elements.message.value = data.message;
-    data['message'] = data.message;
-  }
+  if (data.email) form.elements.email.value = data.email;
+  if (data.message) form.elements.message.value = data.message;
 }
