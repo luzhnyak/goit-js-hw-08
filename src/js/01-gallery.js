@@ -1,10 +1,10 @@
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 // Change code below this line
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const galleryEl = document.querySelector(".gallery");
+const galleryEl = document.querySelector('.gallery');
 
 const galleryMarkup = galleryItems
   .map(({ preview, original, description }) => {
@@ -14,15 +14,15 @@ const galleryMarkup = galleryItems
   </a>
 </li>`;
   })
-  .join("");
+  .join('');
 
 galleryEl.innerHTML = galleryMarkup;
 
-var lightbox = new SimpleLightbox(".gallery a", {
+const lightbox = new SimpleLightbox('.gallery a', {
   /* options */
   captions: true,
-  captionsData: "alt",
-  captionSelector: "img",
-  captionPosition: "bottom",
+  captionsData: 'alt',
+  captionSelector: 'img',
+  captionPosition: 'bottom',
   captionDelay: 250,
 });
